@@ -1,0 +1,34 @@
+<div class="row">
+	<div class="col-xs-12 text-center">
+		<h1>Draw!</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 text-center">
+		Last selected: {{actual}}<br />
+		<button ng-click="saveElementos()"class="btn btn-warning">Salva dibujo...</button>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-8 text-center"><h3>Área de Dibujo</h3></div>
+	<div class="col-xs-4 text-center"><h3>Partidas Guardadas</h3>		</div>
+</div>
+<div class="row">
+	<div class="col-xs-8" id="areaDibujo">
+		<div class="row" ng-repeat="al in alto">
+			<div class="col-xs-1 cursorPointer cuadrado text-center" ng-repeat="an in ancho" ng-mouseover="activaElemento(al,an)" ng-style="{'background-color':'rgba(0,0,0,'+(elementos[al+an]/100)}"
+			> 
+			{{elementos[al+an]}}
+		</div>
+	</div>
+</div>
+<div class="col-xs-4">
+	<ol>
+		<li ng-repeat="lista in listadoElementos"><a ng-click="loadElementosById(lista.id)" >{{formateaFecha(lista.key)}}</a></li>
+	</ol>
+</div>
+</div>
+
+
+
+
